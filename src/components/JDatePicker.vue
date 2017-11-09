@@ -7,8 +7,8 @@
     </p>
     <p class="input-icon" @mouseover="onInputOver" @mouseout="onInputOut">
       <i class="iconfont icon-time" style="display: none"></i>
-      <i class="iconfont icon-richeng" v-show="!clearVisible"></i>
-      <i class="iconfont icon-guanbi is-clear" v-show="clearable && clearVisible" @click="onClearInput"></i>
+      <img src="../img/calendar.png" style="width: 20px;" v-show="!clearVisible"/>
+      <img src="../img/close.png" style="width: 20px;" class="is-clear" v-show="clearable && clearVisible" @click="onClearInput"/>
     </p>
 
     <input type="text" :value="inputText" :class="['input__inner',{'is-disabled':disabled}]" :placeholder="placeholder" @click="onInputFocus" :readonly="!editable || type.toUpperCase() ==='DATERANGE' || (isLunar && showLunarClass.toUpperCase()!='NUMBER')" :disabled="disabled" @input="inputText = $event.target.value" @change="handleInputChange" />
@@ -88,8 +88,8 @@
           <div class="full-jcalendar-header">
             <span>{{year}}年</span>
             <!-- header 年份翻页 -->
-            <p class="prev-month" @click.stop="goYearPrevList"><i class="icon iconfont icon-xiangzuojiantou"></i></p>
-            <p class="next-month" @click.stop="goYearNextList"><i class="icon iconfont icon-xiangyoujiantou"></i></p>
+            <p class="prev-month" @click.stop="goYearPrevList"><</p>
+            <p class="next-month" @click.stop="goYearNextList">></p>
           </div>
 
           <div class="full-jcalendar__body">
